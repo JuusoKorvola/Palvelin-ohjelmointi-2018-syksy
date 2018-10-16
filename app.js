@@ -11,6 +11,14 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+//Asennetaan mongoose liittymä
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb://Juuso:Pottupottu1@ds034198.mlab.com:34198/express_local_library';
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
