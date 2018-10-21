@@ -7,6 +7,7 @@ var AuthorSchema = new Schema(
   {
     first_name: {type: String, required: true, max: 100},
     family_name: {type: String, required: true, max: 100},
+    nationality: {type:String,required: true, max: 100},
     date_of_birth: {type: Date},
     date_of_death: {type: Date},
   }
@@ -18,6 +19,7 @@ AuthorSchema
 .get(function () {
   return this.family_name + ', ' + this.first_name;
 });
+
 
 // Virtual for author's lifespan. Uses virtual date of birth/death to display
 // a clean looking date for the author's lifespan.

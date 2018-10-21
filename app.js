@@ -14,7 +14,7 @@ var app = express();
 
 //Asennetaan mongoose liittymä
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://Juuso:Pottupottu1@ds034198.mlab.com:34198/express_local_library';
+var mongoDB = 'mongodb://Juuso:Pottupottu1@ds137643.mlab.com:37643/locallibrary2jk';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;

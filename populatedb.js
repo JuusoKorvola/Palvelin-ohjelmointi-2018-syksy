@@ -28,8 +28,8 @@ var genres = []
 var books = []
 var bookinstances = []
 
-function authorCreate(first_name, family_name, d_birth, d_death, cb) {
-  authordetail = {first_name:first_name , family_name: family_name }
+function authorCreate(first_name, family_name, nationality, d_birth, d_death, cb) {
+  authordetail = {first_name:first_name , family_name: family_name, nationality:nationality }
   if (d_birth != false) authordetail.date_of_birth = d_birth
   if (d_death != false) authordetail.date_of_death = d_death
   
@@ -107,19 +107,19 @@ function bookInstanceCreate(book, imprint, due_back, status, cb) {
 function createGenreAuthors(cb) {
     async.parallel([
         function(callback) {
-          authorCreate('Patrick', 'Rothfuss', '1973-06-06', false, callback);
+          authorCreate('Patrick', 'Rothfuss','American', '1973-06-06', false, callback);
         },
         function(callback) {
-          authorCreate('Ben', 'Bova', '1932-11-8', false, callback);
+          authorCreate('Ben', 'Bova','American', '1932-11-8', false, callback);
         },
         function(callback) {
-          authorCreate('Isaac', 'Asimov', '1920-01-02', '1992-04-06', callback);
+          authorCreate('Isaac', 'Asimov','American', '1920-01-02', '1992-04-06', callback);
         },
         function(callback) {
-          authorCreate('Bob', 'Billings', false, false, callback);
+          authorCreate('Bob', 'Billings','American', false, false, callback);
         },
         function(callback) {
-          authorCreate('Jim', 'Jones', '1971-12-16', false, callback);
+          authorCreate('Jim', 'Jones', 'American','1971-12-16', false, callback);
         },
         function(callback) {
           genreCreate("Fantasy", callback);
